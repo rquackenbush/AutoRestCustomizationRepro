@@ -3,12 +3,12 @@ Attempt to reproduce issue I'm having with AutoRest client generation.
 
 I am unable to customize the models / rest client being generated. The two customizations I'm attempting:
 
-- Rename the `Person` model to `PersonCustomized` using `[CodeGenModel]` [here](Customized/Models/PersonCustomized).
-- Supress generation of the `AddPersonAsync` method using `[CodeGenSuppress]` [here](Customized/SampleRestClient).
+- Rename the `Person` model to `PersonCustomized` using `[CodeGenModel]` [here](Customized/Models/PersonCustomized.cs).
+- Supress generation of the `AddPersonAsync` method using `[CodeGenSuppress]` [here](Customized/SampleRestClient.cs).
 
 I expect:
 - The generated model for `Person` to be called `PersonCustomized`
-- The `AddPersonAsync` to not be present in the generated SampleRestClient.
+- The `AddPersonAsync` to not be present in the generated `SampleRestClient`.
 
 
 ## Running the sample
@@ -165,5 +165,4 @@ debug   | [4.00 s] csharpgen/emitter - END [0 s][88 MB]
 [4 s] Generation Complete
 [4 s] Shutting Down.
 [4.01 s] Exiting.
-
 ```
