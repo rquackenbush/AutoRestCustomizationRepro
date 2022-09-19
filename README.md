@@ -3,8 +3,8 @@ Attempt to reproduce issue I'm having with AutoRest client generation.
 
 I am unable to customize the models / rest client being generated. The two customizations I'm attempting:
 
-- Rename the `Person` model to `PersonCustomized` using `[CodeGenModel]` [here](Customized/Models/PersonCustomized.cs).
-- Supress generation of the `AddPersonAsync` method using `[CodeGenSuppress]` [here](Customized/SampleRestClient.cs).
+- Rename the `Person` model to `PersonCustomized` using `[CodeGenModel]` [here](src/AutoRestCustomizationRepro/Customized/Models/PersonCustomized.cs).
+- Supress generation of the `AddPersonAsync` method using `[CodeGenSuppress]` [here](src/AutoRestCustomizationRepro/Customized/SampleRestClient.cs).
 
 I expect:
 - The generated model for `Person` to be called `PersonCustomized`
