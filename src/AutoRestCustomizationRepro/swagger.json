@@ -1,0 +1,91 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+      "title": "Sample API",
+      "description": "Sample API",
+      "version": "v1"
+    },
+    "paths": {
+      "/api/person": {
+        "post": {
+          "tags": [
+            "Person"
+          ],
+          "summary": "Adds or replaces a person",
+          "operationId": "Sample_AddPerson",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateOrReplacePersonRequest"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateOrReplacePersonRequest"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateOrReplacePersonRequest"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/CreateOrReplacePersonResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "Person": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "nullable": true
+            },
+            "name": {
+              "type": "string",
+              "nullable": true
+            },
+            "additionalProperties": {}
+          }
+        },
+        "CreateOrReplacePersonRequest": {
+          "type": "object",
+          "properties": {
+            "foo": {
+              "type": "string",
+              "nullable": true
+            },
+            "person": {
+              "$ref": "#/components/schemas/Person"
+            }
+          },
+          "additionalProperties": {}
+        },
+        "CreateOrReplacePersonResponse": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "nullable": true
+            },
+            "additionalProperties": {}
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,1 @@
+autorest autorest.md --version=3.6.2 --verbose --debug 
